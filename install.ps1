@@ -1,7 +1,7 @@
 # mcp-stama One-Liner PowerShell Installer for Windows
 $ErrorActionPreference = "Stop"
 
-$Repo = "mcp-stama/mcp-stama"
+$Repo = "StamManif/mcp-stama"
 $InstallDir = Join-Path $env:USERPROFILE ".mcp-stama\bin"
 $ZipName = "mcp-stama-x86_64-pc-windows-msvc.zip"
 $DownloadUrl = "https://github.com/$Repo/releases/latest/download/$ZipName"
