@@ -67,12 +67,13 @@ cargo install mcp-stama
 ### 2. Auto-Connect to Your AI Editor
 
 Skip manual JSON editing! Let `mcp-stama` configure your AI client automatically:
-Auto-configure Cursor
+
+##Auto-configure for Cursor
 
 ```bash
 mcp-stama --install-cursor
 ```
-Auto-configure Claude Desktop
+#Auto-configure for Claude Desktop
 
 ```bash
 mcp-stama --install-claude
