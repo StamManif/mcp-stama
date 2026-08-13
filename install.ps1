@@ -6,12 +6,12 @@ $InstallDir = Join-Path $env:USERPROFILE ".mcp-stama\bin"
 $ZipName = "mcp-stama-x86_64-pc-windows-msvc.zip"
 $DownloadUrl = "https://github.com/$Repo/releases/latest/download/$ZipName"
 
-Write-Host "⚡ Closing running instances of Claude and Cursor..." -ForegroundColor Cyan
+Write-Host "Closing running instances of Claude and Cursor..." -ForegroundColor Cyan
 Stop-Process -Name "Claude" -Force -ErrorAction SilentlyContinue
 Stop-Process -Name "Cursor" -Force -ErrorAction SilentlyContinue
 Start-Sleep -Seconds 1
 
-Write-Host "⚡ Installing mcp-stama..." -ForegroundColor Cyan
+Write-Host "Installing mcp-stama..." -ForegroundColor Cyan
 
 if (-not (Test-Path $InstallDir)) {
     New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null
@@ -35,12 +35,12 @@ if ($UserPath -notlike "*$InstallDir*") {
     Write-Host "Added $InstallDir to User PATH." -ForegroundColor Green
 }
 
-Write-Host "✅ mcp-stama installed to $ExePath" -ForegroundColor Green
+Write-Host "mcp-stama installed to $ExePath" -ForegroundColor Green
 
 # Run automatic MCP client configurator
 try {
     & $ExePath --install-cursor --install-claude
-    Write-Host "🚀 Cursor & Claude Desktop auto-configured!" -ForegroundColor Cyan
+    Write-Host "Cursor & Claude Desktop auto-configured!" -ForegroundColor Cyan
 } catch {
     Write-Host "Could not auto-configure clients automatically. You can run 'mcp-stama --install-cursor' manually." -ForegroundColor Yellow
 }
