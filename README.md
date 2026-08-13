@@ -68,7 +68,7 @@ cargo install mcp-stama
 
 Skip manual JSON editing! Let `mcp-stama` configure your AI client automatically:
 
-#### Auto-configure for Claude Desktop
+#### Auto-configure for Claude Desktop:
 MacOS/Linux
 ```bash
 { command -v mcp-stama >/dev/null 2>&1 && mcp-stama || ~/.local/bin/mcp-stama; } --install-claude
@@ -79,7 +79,7 @@ Windows
 & "$HOME\.mcp-stama\bin\mcp-stama.exe" --install-claude
 ```
 
-#### Auto-configure for Cursor
+#### Auto-configure for Cursor:
 MacOS/Linux
 ```bash
 { command -v mcp-stama >/dev/null 2>&1 && mcp-stama || ~/.local/bin/mcp-stama; } --install-cursor
