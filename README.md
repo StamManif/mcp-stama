@@ -1,4 +1,4 @@
-# ⚡ mcp-stama
+# ⚡ MCP Stama
 
 <p align="center">
   <strong>The Ultra-Fast Swiss Army Knife MCP Server for AI Coding Agents</strong><br>
