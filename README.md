@@ -70,12 +70,12 @@ Skip manual JSON editing! Let `mcp-stama` configure your AI client automatically
 
 #### Auto-configure for Cursor
 ```bash
-mcp-stama --install-cursor
+& "$HOME\.mcp-stama\bin\mcp-stama.exe" --install-cursor
 ```
 
 #### Auto-configure for Claude Desktop
 ```bash
-mcp-stama --install-claude
+& "$HOME\.mcp-stama\bin\mcp-stama.exe" --install-claude
 ```
 
 ---
