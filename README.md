@@ -1,4 +1,3 @@
-```markdown
 # ⚡ mcp-stama
 
 <p align="center">
@@ -51,21 +50,16 @@ Each tool in `mcp-stama` is engineered to give your AI agent deep local context 
 #### macOS / Linux:
 ```bash
 curl -fsSL [https://raw.githubusercontent.com/StamManif/mcp-stama/main/install.sh](https://raw.githubusercontent.com/StamManif/mcp-stama/main/install.sh) | sh
-
 ```
 
 #### Windows (PowerShell):
-
 ```powershell
 iwr -useb [https://raw.githubusercontent.com/StamManif/mcp-stama/main/install.ps1](https://raw.githubusercontent.com/StamManif/mcp-stama/main/install.ps1) | iex
-
 ```
 
 #### Via Cargo (Rust developers):
-
 ```bash
 cargo install mcp-stama
-
 ```
 
 ---
@@ -80,7 +74,6 @@ mcp-stama --install-cursor
 
 # Auto-configure Claude Desktop
 mcp-stama --install-claude
-
 ```
 
 ---
@@ -90,7 +83,6 @@ mcp-stama --install-claude
 If you prefer adding it manually to your settings file:
 
 #### Cursor (`~/.cursor/mcp.json`):
-
 ```json
 {
   "mcpServers": {
@@ -100,11 +92,9 @@ If you prefer adding it manually to your settings file:
     }
   }
 }
-
 ```
 
 #### Claude Desktop (`claude_desktop_config.json`):
-
 ```json
 {
   "mcpServers": {
@@ -114,7 +104,6 @@ If you prefer adding it manually to your settings file:
     }
   }
 }
-
 ```
 
 ---
@@ -124,7 +113,7 @@ If you prefer adding it manually to your settings file:
 Run the embedded benchmark suite on your own machine at any time with `mcp-stama --benchmark`:
 
 | Tool Name | Invocations | p50 Latency | p99 Latency | Memory Footprint (RSS) |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- |
 | **`docker_watcher`** | 100 | **327 µs** | **1.66 ms** | `< 10 MB` |
 | **`git_snapshot`** | 100 | **462 µs** | **1.36 ms** | `< 10 MB` |
 | **`fast_grep`** | 100 | **5.05 ms** | **8.72 ms** | `< 10 MB` |
@@ -156,7 +145,6 @@ Run the embedded benchmark suite on your own machine at any time with `mcp-stama
 |    fast_grep    |     |  git_snapshot   |     | docker_watcher  |
 | (ignore/regex)  |     |   (gix/rust)    |     | (bollard/sys)   |
 +-----------------+     +-----------------+     +-----------------+
-
 ```
 
 ---
@@ -176,15 +164,10 @@ cargo build --release
 
 # Run internal micro-benchmarks
 ./target/release/mcp-stama --benchmark
-
 ```
 
 ---
 
 ## 📄 License
 
-Licensed under the **Apache License, Version 2.0** ([LICENSE](https://www.google.com/search?q=LICENSE) or http://www.apache.org/licenses/LICENSE-2.0).
-
-```
-
-```
+Licensed under the **Apache License, Version 2.0** ([LICENSE](LICENSE) or http://www.apache.org/licenses/LICENSE-2.0).
