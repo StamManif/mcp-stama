@@ -5,7 +5,7 @@ use std::time::Instant;
 use sysinfo::{MemoryRefreshKind, Pid, RefreshKind, System};
 
 pub async fn run_benchmark(registry: Arc<ToolRegistry>) -> anyhow::Result<()> {
-    eprintln!("\n⚡ Running mcp-stama Micro-Latency Benchmark Suite ⚡\n");
+    eprintln!("\nRunning mcp-stama Micro-Latency Benchmark Suite\n");
 
     let tools_list = registry.list_tools();
     if tools_list.is_empty() {
