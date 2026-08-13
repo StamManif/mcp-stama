@@ -6,6 +6,11 @@ $InstallDir = Join-Path $env:USERPROFILE ".mcp-stama\bin"
 $ZipName = "mcp-stama-x86_64-pc-windows-msvc.zip"
 $DownloadUrl = "https://github.com/$Repo/releases/latest/download/$ZipName"
 
+Write-Host "⚡ Closing running instances of Claude and Cursor..." -ForegroundColor Cyan
+Stop-Process -Name "Claude" -Force -ErrorAction SilentlyContinue
+Stop-Process -Name "Cursor" -Force -ErrorAction SilentlyContinue
+Start-Sleep -Seconds 1
+
 Write-Host "⚡ Installing mcp-stama..." -ForegroundColor Cyan
 
 if (-not (Test-Path $InstallDir)) {
