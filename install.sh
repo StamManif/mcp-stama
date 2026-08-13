@@ -2,8 +2,13 @@
 set -e
 
 # mcp-stama One-Liner Installer for Linux & macOS
-REPO="mcp-stama/mcp-stama"
+REPO="StamManif/mcp-stama"
 INSTALL_DIR="$HOME/.local/bin"
+
+echo "⚡ Closing any running instances of Claude and Cursor..."
+pkill -f "Claude" 2>/dev/null || true
+pkill -f "Cursor" 2>/dev/null || true
+sleep 1
 
 echo "⚡ Installing mcp-stama..."
 
