@@ -1,0 +1,59 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    name: Build Release (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - target: x86_64-pc-windows-msvc
+            os: windows-latest
+            artifact_name: mcp-stama-x86_64-pc-windows-msvc.zip
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-latest
+            artifact_name: mcp-stama-x86_64-unknown-linux-gnu.tar.gz
+          - target: x86_64-apple-darwin
+            os: macos-latest
+            artifact_name: mcp-stama-x86_64-apple-darwin.tar.gz
+          - target: aarch64-apple-darwin
+            os: macos-latest
+            artifact_name: mcp-stama-aarch64-apple-darwin.tar.gz
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Build release binary
+        run: cargo build --release --target ${{ matrix.target }}
+
+      - name: Package artifact (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: powershell
+        run: |
+          Compress-Archive -Path target/${{ matrix.target }}/release/mcp-stama.exe -DestinationPath ${{ matrix.artifact_name }}
+
+      - name: Package artifact (Unix)
+        if: matrix.os != 'windows-latest'
+        run: |
+          tar -czf ${{ matrix.artifact_name }} -C target/${{ matrix.target }}/release mcp-stama
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ matrix.artifact_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
